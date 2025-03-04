@@ -1,0 +1,37 @@
+{{>header}}
+<title>BabyCare - {{service.metaTitle}}</title>
+<meta name="description" content={{service.metaDescription}}>
+<meta name="keywords" content={{service.metaKeywords}}>
+{{>navbar}}
+
+{{>hero}}
+
+<div class="container-fluid service py-4">
+    <div class="row mx-3">
+        <div class="col-md-9">
+            <h4 class="bg-primary p-2 text-light text-center">{{service.name}}</h4>
+            <p class="text-justify mb-3">{{service.shortDescription}}</p>
+            <img src="/{{service.cover}}" height="400px" width="100%" alt="">
+            <div class="card my-3 p-3">
+                <p class="text-justify">{{{service.longDescription}}}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h4 class="text-light text-center  p-2 bg-primary">Our Other Services</h4>
+            {{#each allServices}}
+            <a href="/service/{{_id}}" class="d-block bg-primary p-2 mb-1 fs-5 text-light">{{name}}</a>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{{>footer}}

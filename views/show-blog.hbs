@@ -1,0 +1,29 @@
+{{>header}}
+<title>BabyCare - {{blog.metaTitle}}</title>
+<meta name="description" content={{blog.metaDescription}}>
+<meta name="keywords" content={{blog.metaKeywords}}>
+{{>navbar}}
+
+{{>hero}}
+
+<div class="container-fluid blog py-4">
+    <div class="row mx-3">
+        <div class="col-md-9">
+            <h4 class="bg-primary p-2 text-light text-center">{{blog.name}} <span class="float-end fs-6 mt-1">{{dateHelper blog.createdAt}}</span></h4>
+            <p class="text-justify mb-3">{{blog.shortDescription}}</p>
+            <img src="/{{blog.cover}}" height="400px" width="100%" alt="">
+            <div class="card my-3 p-3">
+                <p class="text-justify">{{{blog.longDescription}}}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h4 class="text-light text-center  p-2 bg-primary">Our Other Blogs</h4>
+            {{#each allBlogs}}
+            <a href="/blog/{{_id}}" class="d-block bg-primary p-2 mb-1 fs-5 text-light">{{name}}</a>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+{{>footer}}

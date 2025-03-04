@@ -1,0 +1,110 @@
+{{>header}}
+<title>BabyCare - {{title}}</title>
+{{>navbar}}
+
+{{>hero}}
+
+
+<!-- Contact Start -->
+<div class="container-fluid py-4">
+    <div class="container py-4">
+        <div class="p-5 bg-light rounded">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+                <h4
+                    class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">
+                    Contact Us</h4>
+                <h1 class="display-3">Contact For Any Query</h1>
+            </div>
+            <div class="row g-5 mt-2 mb-5">
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
+                        <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
+                        <div class="">
+                            <h4>Address</h4>
+                            <a class="mb-2"
+                                href=" https://www.google.com/maps/place/Patel+Nagar/@28.6450319,77.1666961,17z/data=!3m1!4b1!4m6!3m5!1s0x390d02eb04589231:0xeaa718aa62568259!8m2!3d28.6450319!4d77.169271!16s%2Fm%2F0c3xg29?entry=ttu&g_ep=EgoyMDI1MDIxMS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                                target="_blank">B-14
+                                Patel Nagar, New Delhi</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
+                        <i class="fas fa-envelope fa-2x text-primary me-4"></i>
+                        <div class="">
+                            <h4>Mail Us</h4>
+                            <a class="mb-2" target="_blank"
+                                href="mailto:rajangupta9716@gmail.com">rajangupta9716@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
+                        <i class="fa fa-phone fa-2x text-primary me-4"></i>
+                        <div class="">
+                            <h4>Telephone</h4>
+                            <a href="tel:+917217630207" target="_blank">91+7217630207</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
+                        <i class="fa fa-whatsapp fa-2x text-primary me-4"></i>
+                        <div class="">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/+917217630207" target="_blank">91+7217630207</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    {{#if message}}
+                    <p class="text-success text-center">{{message}}</p>
+                    {{/if}}
+                    <form action="/contactus" method="post">
+                        <div class="mb-3">
+                            <input type="text" name="name" class="w-100 form-control p-2 border-primary"
+                                placeholder="Your Full Name">
+                            {{#if errorMessage.name}}<P class="text-danger">{{errorMessage.name}}</P>{{/if}}
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="email" class="w-100 form-control p-2 border-primary"
+                                placeholder="Enter Your Email Address">
+                            {{#if errorMessage.email}}<P class="text-danger">{{errorMessage.email}}</P>{{/if}}
+
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="phone" class="w-100 form-control p-2 border-primary"
+                                placeholder="Enter Your Phone Number">
+                            {{#if errorMessage.phone}}<P class="text-danger">{{errorMessage.phone}}</P>{{/if}}
+
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="subject" class="w-100 form-control p-2 border-primary"
+                                placeholder="Enter Your Subject">
+                            {{#if errorMessage.subject}}<P class="text-danger">{{errorMessage.subject}}</P>{{/if}}
+
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" class="w-100 form-control mb-3 border-primary" rows="4"
+                              cols="10"  placeholder="Your Message"></textarea>
+                            {{#if errorMessage.message}}<P class="text-danger">{{errorMessage.message}}</P>{{/if}}
+                        </div>
+
+                        <button class="w-100 btn btn-primary form-control py-2 border-primary text-white bg-primary"
+                            type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <iframe width="100%" height="100%" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=B-14%20Patel%20Nagar%20&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+{{>footer}}

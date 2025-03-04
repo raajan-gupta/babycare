@@ -1,0 +1,45 @@
+{{>header}}
+<title>BabyCare - {{event.metaTitle}}</title>
+<meta name="description" content={{event.metaDescription}}>
+<meta name="keywords" content={{event.metaKeywords}}>
+{{>navbar}}
+
+{{>hero}}
+
+<div class="container-fluid event py-4">
+    <div class="row mx-3">
+        <div class="col-md-9">
+            <h4 class="bg-primary p-2 text-light text-center">{{event.name}}</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Event Date</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{event.date}}</td>
+                        <td>{{event.time}} Hours</td>
+                        <td>{{event.location}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-justify mb-3">{{event.shortDescription}}</p>
+            <img src="/{{event.cover}}" height="400px" width="100%" alt="">
+            <div class="card my-3 p-3">
+                <p class="text-justify">{{{event.longDescription}}}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h4 class="text-light text-center  p-2 bg-primary">Our Other Events</h4>
+            {{#each allEvents}}
+            <a href="/event/{{_id}}" class="d-block bg-primary p-2 mb-1 fs-5 text-light">{{name}}</a>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+{{>footer}}
