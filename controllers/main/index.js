@@ -89,10 +89,13 @@ async function home(req, res) {    //api function
     })
 }
 
-function about(req, res) {
+async function about(req, res) {
     res.render("about", {
         title: `${process.env.SITE_NAME} - About Us`,
-        session: req.session
+        session: req.session,
+        services: await getServices(),
+        teams: await getTeams(),
+        testimonials: await getTestimonials(),
     })
 }
 async function service(req, res) {
